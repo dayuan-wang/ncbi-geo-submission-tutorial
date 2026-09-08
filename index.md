@@ -11,20 +11,12 @@ GEO's own documentation is authoritative and worth reading alongside this. The
 links are collected at the [end](#reference). This guide covers what the steps
 involve in practice and the points where submissions commonly stall.
 
+<nav class="toc" markdown="1">
 **Contents**
 
-1. [Before you start](#before-you-start)
-2. [Account and upload space](#account-and-upload-space)
-3. [What GEO accepts](#what-geo-accepts)
-4. [Gather your files into one folder](#gather-your-files-into-one-folder)
-5. [Fill in the metadata spreadsheet](#fill-in-the-metadata-spreadsheet)
-6. [MD5 checksums](#md5-checksums)
-7. [Upload over FTP](#upload-over-ftp)
-8. [Check what arrived](#check-what-arrived)
-9. [Submit the metadata spreadsheet](#submit-the-metadata-spreadsheet)
-10. [What happens next](#what-happens-next)
-
----
+* seed list, replaced by kramdown
+{:toc}
+</nav>
 
 ## Before you start
 

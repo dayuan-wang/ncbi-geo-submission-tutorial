@@ -1,0 +1,179 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+
+/* ---------------------------------------------------------------------------
+   Layout override.
+
+   The stock minimal theme floats `header` and `footer` into a fixed 270px
+   left column and gives `section` the remaining 500px, which leaves very
+   little room for content. Those rules use bare element selectors, so the
+   class selectors below take precedence and reset them.
+
+   Result: header across the top, footer at the bottom, and a wide content
+   column with a small sticky table of contents in the left gutter.
+   --------------------------------------------------------------------------- */
+
+.wrapper { width: auto; margin: 0; }
+
+header, section, footer {
+  width: auto;
+  float: none;
+  position: static;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* --- header ------------------------------------------------------------- */
+.site-header {
+  background: #f7f7f5;
+  border-bottom: 1px solid #e3e3dd;
+  padding: 34px 0 28px;
+  margin-bottom: 42px;
+}
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.site-header h1 a { color: #1a1a19; text-decoration: none; }
+.site-header h1 a:hover { text-decoration: underline; }
+.site-header .tagline {
+  margin: 0 0 14px;
+  color: #5b5f5c;
+  font-size: 16px;
+  max-width: 64ch;
+}
+.site-header .view { margin: 0; font-size: 14px; }
+.site-header .view small {
+  display: block;
+  color: #858986;
+  font-size: 12.5px;
+  margin-top: 2px;
+}
+
+/* --- content + table of contents ---------------------------------------- */
+.site-main { padding-bottom: 56px; }
+
+.content {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  column-gap: 46px;
+}
+.content > * { grid-column: 2; min-width: 0; }
+
+.content > nav.toc {
+  grid-column: 1;
+  grid-row: 1 / span 500;
+  align-self: start;
+  position: sticky;
+  top: 22px;
+  font-size: 13px;
+  line-height: 1.45;
+  border-right: 1px solid #e8e8e2;
+  padding-right: 16px;
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+}
+nav.toc > p {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8e8b;
+  font-weight: 600;
+}
+nav.toc ul { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+nav.toc li { counter-increment: toc; margin: 0 0 4px; }
+nav.toc a {
+  color: #5b5f5c;
+  text-decoration: none;
+  display: block;
+  padding: 2px 0 2px 1.7em;
+  text-indent: -1.7em;
+}
+nav.toc a::before {
+  content: counter(toc) ".";
+  display: inline-block;
+  width: 1.5em;
+  text-indent: 0;
+  color: #9aa09a;
+}
+nav.toc a:hover { color: #1a1a19; text-decoration: underline; }
+
+/* --- content typography -------------------------------------------------- */
+.content h2 {
+  margin: 40px 0 12px;
+  padding-top: 4px;
+  font-size: 23px;
+  scroll-margin-top: 16px;
+}
+.content > h2:first-of-type { margin-top: 0; }
+.content h3 { margin: 26px 0 8px; font-size: 17px; }
+.content p, .content li { max-width: 76ch; }
+.content img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e3e3dd;
+  border-radius: 5px;
+  background: #fff;
+  margin: 6px 0 4px;
+}
+.content p > em:only-child {
+  display: block;
+  color: #6b6f6c;
+  font-size: 13.5px;
+  margin-top: -2px;
+}
+.content blockquote {
+  border-left: 3px solid #d5dbd6;
+  background: #f8f9f8;
+  margin: 0 0 16px;
+  padding: 10px 16px;
+  color: #434744;
+  font-style: normal;
+}
+.content table { max-width: 76ch; }
+.content td, .content th { vertical-align: top; }
+.content hr { margin: 34px 0; }
+
+/* --- footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid #e3e3dd;
+  background: #f7f7f5;
+  padding: 24px 0 40px;
+  color: #6b6f6c;
+  font-size: 14px;
+}
+.site-footer p { margin: 0 0 4px; }
+
+/* --- narrow screens ------------------------------------------------------ */
+@media print, screen and (max-width: 900px) {
+  .content { display: block; }
+  .content > nav.toc {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: 1px solid #e8e8e2;
+    padding: 0 0 16px;
+    margin: 0 0 26px;
+  }
+  nav.toc ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0 14px;
+  }
+}
+@media print, screen and (max-width: 600px) {
+  .container { padding: 0 18px; }
+  .site-header h1 { font-size: 25px; }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dayuan-wang.github.io/ncbi-geo-submission-tutorial/sitemap.xml

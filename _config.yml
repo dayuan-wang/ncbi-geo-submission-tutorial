@@ -1,21 +1,35 @@
 theme: jekyll-theme-minimal
 
 title: Submitting data to NCBI GEO
-description: A step-by-step guide for depositing high-throughput sequencing data
+description: >-
+  A step-by-step guide to depositing high-throughput sequencing data in the NCBI
+  Gene Expression Omnibus — upload space, raw and processed data requirements,
+  the metadata spreadsheet, MD5 checksums, and the FTP transfer.
+tagline: A step-by-step guide for depositing high-throughput sequencing data
 
-show_downloads: false
+url: https://dayuan-wang.github.io
+baseurl: /ncbi-geo-submission-tutorial
+lang: en-US
 
 author:
   name: Dayuan Wang
+  url: https://dayuan-wang.github.io/
 
-github:
-  is_project_page: true
+show_downloads: false
 
+# --- search engines -------------------------------------------------------
+plugins:
+  - jekyll-seo-tag      # <title>, meta description, canonical, Open Graph, JSON-LD
+  - jekyll-sitemap      # /sitemap.xml, referenced from robots.txt
+
+# --- markdown -------------------------------------------------------------
 markdown: kramdown
 kramdown:
   input: GFM
+  toc_levels: 2..2      # the sidebar TOC lists ## headings only
   syntax_highlighter: rouge
 
 exclude:
   - README.md
   - LICENSE
+  - .gitignore
