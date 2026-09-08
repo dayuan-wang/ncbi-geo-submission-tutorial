@@ -1,0 +1,21 @@
+theme: jekyll-theme-minimal
+
+title: Submitting data to NCBI GEO
+description: A step-by-step guide for depositing high-throughput sequencing data
+
+show_downloads: false
+
+author:
+  name: Dayuan Wang
+
+github:
+  is_project_page: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - README.md
+  - LICENSE
