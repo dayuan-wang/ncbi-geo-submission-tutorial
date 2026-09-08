@@ -1,0 +1,18 @@
+# 绝不提交未遮盖的原件 —— 它们含 GEO 的活凭证。
+# 真正的防线是把它们放在仓库之外（../geo-tutorial-source-PRIVATE/），
+# 这里只是第二道保险。
+screenshots/
+*-PRIVATE/
+*.pdf
+
+# Credentials. Deliberately broad - this repo's one real risk is leaking a GEO
+# password, so over-matching is the correct bias. It will also catch innocent
+# filenames (it caught a redacted screenshot called ftp-step2-credentials.png,
+# now renamed). If a legitimate file is blocked, rename the file rather than
+# loosening the rule.
+.geoftp_creds
+*credentials*
+*.pem
+*.key
+
+.DS_Store
