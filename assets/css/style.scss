@@ -25,11 +25,15 @@ header, section, footer {
   border: 0;
 }
 
+/* Sized so the text column lands on a comfortable measure with no dead space
+   to its right: 180 (toc) + 44 (gap) + ~680 (text) + 56 (padding). */
 .container {
-  max-width: 1080px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 28px;
 }
+
+body { font-size: 15px; line-height: 1.6; }
 
 /* --- header ------------------------------------------------------------- */
 .site-header {
